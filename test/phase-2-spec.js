@@ -9,11 +9,14 @@ const { mirrorArray, hiddenCounter, myMap, avgValue } = require('../problems/pha
 describe('mirrorArray()', function () {
   it('should return a single array where the first half is the orginal array and the second half is a mirror of the first half', function () {
     //Arrange
-
+    let input = [1,2,3];
+    let res = mirrorArray(input);
+    let expected = [1,2,3,3,2,1];
+    expect(res).to.deep.equal(expected);
     //Act
     
     //Assert
-    expect.fail('Remove this expect.fail and replace it with your test');
+    //expect.fail('Remove this expect.fail and replace it with your test');
   })
 })
 
@@ -26,7 +29,7 @@ describe('hiddenCounter()', function () {
     //Act
 
     //Assert
-    expect.fail('Remove this expect.fail and replace it with your test');
+    //expect.fail('Remove this expect.fail and replace it with your test');
   })
 })
 
@@ -38,7 +41,7 @@ describe('myMap', function () {
     //Act
    
     //Assert
-   expect.fail('Remove this expect.fail and replace it with your test');
+   //expect.fail('Remove this expect.fail and replace it with your test');
   });
 
   it("should not call the built in Array#map", function () {

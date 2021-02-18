@@ -16,7 +16,7 @@ const mirrorArray = (array) => {
     newArray.push(el);
   }
 
-  for (let i = array.length - 1; i >= 0; i += 1) {
+  for (let i = array.length - 1; i >= 0; i -= 1) {
     let el = array[i];
     newArray.push(el);
   }

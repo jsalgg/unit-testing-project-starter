@@ -48,14 +48,15 @@ function fizzBuzz(max) {
   }
 
   const array = [];
-  for (let i = 0; i < max; i += 1) {
-    if (i % 3 === 0 || i % 5 !== 0) {
+  for (let i = 0; i < max; i ++) {
+    if (i % 3 === 0 && i % 5 !== 0) {
       array.push(i);
-    } else if (i % 5 === 0 || i % 3 !== 0) {
+    } else if (i % 5 === 0 && i % 3 !== 0) {
       array.push(i);
     }
   }
   return array;
 }
 
+//fizzBuzz(10);
 module.exports = { isFive, isOdd, myRange, fizzBuzz };
