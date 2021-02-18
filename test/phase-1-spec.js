@@ -14,7 +14,6 @@ describe("isFive(num)", () => {
 
     expect(res).to.deep.equal(expected);
     //expect(res).to.eql(expected);
-
     //Arrange
 
     //Act
@@ -26,27 +25,37 @@ describe("isFive(num)", () => {
 describe("isOdd(number)", () => {
   it("should return true if number is odd", () => {
     //Arrange
-
-    //Act
+let input = 5;
+let res = isOdd(input);
+let expected = true;
+//Act
+expect(res).to.deep.equal(expected);
 
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    //expect.fail("Remove this expect.fail and replace it with your test");
   });
   it("should return false if the num is even", () => {
+    let input = 4;
+    let res = isOdd(input);
+    let expected = false;
     //Arrange
 
     //Act
 
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    expect(res).to.deep.equal(expected);
+   // expect.fail("Remove this expect.fail and replace it with your test");
   });
   it("should throw an error if num is not type of Number", () => {
     //Arrange
-
+let input = "string";
+let res = isOdd(input);
+//let expected = "some error";
+expect(res).to.throw(Error);
     //Act
 
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    //expect.fail("Remove this expect.fail and replace it with your test");
   });
 });
 describe("myRange(min, max, step)", () => {

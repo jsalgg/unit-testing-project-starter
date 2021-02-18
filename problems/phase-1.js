@@ -15,9 +15,10 @@ function isOdd(number) {
   if (typeof number !== "number") {
     throw Error("some error");
   }
-  return !number % 2 === 0;
+  return number % 2 !== 0;
 }
 
+//console.log(isOdd("string"));
 /*3. Array  of the Range Write a function myRange(min, max, step) that takes in
       3 numbers as parameters. The function should return an array of the
       numbers between and inclusive of min and max at step intervals.
