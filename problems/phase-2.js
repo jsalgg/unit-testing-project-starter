@@ -31,9 +31,10 @@ it will define a count variable, then it will return a function.
 When invoked the function returned by hiddenCounter will increment the counter by 1.
 */
 function hiddenCounter() {
-  let count = undefined;
+  let count = 0;
   return () => (count += 1);
 }
+console.log(hiddenCounter()());
 /*
 3. myMap 
 Write a function  named `myMap` that accepts an array
@@ -46,7 +47,7 @@ Do not use the built in Array#map - use Array#forEach for iteration.
 const myMap = (array, cb) => {
   let mapped = [];
 
-  array.forEach((el) => mapped.push(el));
+  array.forEach((el) => mapped.push(cb(el)));
   return mapped;
 };
 
