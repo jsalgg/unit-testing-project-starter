@@ -25,8 +25,11 @@ function isOdd(number) {
 */
 
 function myRange(min, max, step = 1) {
+  if (typeof min !== "number") {
+    throw Error("not a number");
+  }
   const array = [];
-  for (let i = min; i <= max; i++) {
+  for (let i = min; i <= max; i += step) {
     array.push(i);
   }
   return array;
