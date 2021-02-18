@@ -33,7 +33,7 @@ describe("hiddenCounter()", function () {
     //check if its ionstance of func
     //cb.should.be.instanceOf(Function);
     let cb = hiddenCounter();
-    hiddenCounter().to.be.instanceOf(Function);
+    expect(cb).to.be.instanceOf(Function);
     let res1 = cb();
     let res2 = cb();
     //check if res1 = 1 and res2 = 2
@@ -50,6 +50,18 @@ describe("hiddenCounter()", function () {
 describe("myMap", function () {
   it("should function like the built in Array#map", function () {
     //Arrange
+    let input = [1,2,3,4,5];
+     let cb = (number) => {
+    //   let arr = [];
+
+    //   number.forEach((el) => arr.push(el * 2));
+    //   return arr;
+      return number * 2;
+       };
+const result = input.map((x) => x * 2);
+    let func = myMap(input, cb);
+    expect(func).to.deep.equal(result);
+   
     //Act
     //Assert
     //expect.fail('Remove this expect.fail and replace it with your test');
@@ -57,11 +69,14 @@ describe("myMap", function () {
 
   it("should not call the built in Array#map", function () {
     //Arrange
-
+    let arr = [1, 2, 3];
+    let spy = chai.spy.on(arr, "map")
     //Act
-
+    myMap(arr, () => {});
+expect(spy).to.not.have.been.called();
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+console.log(arr);
+    //expect.fail("Remove this expect.fail and replace it with your test");
   });
 });
 

@@ -24,6 +24,7 @@ const mirrorArray = (array) => {
   return newArray;
 };
 
+
 /*
 2.  hiddenCounter
 Write a function named `hiddenCounter()`. This function will do two things - first
@@ -34,7 +35,9 @@ function hiddenCounter() {
   let count = 0;
   return () => (count += 1);
 }
-console.log(hiddenCounter()());
+console.log(hiddenCounter());
+
+
 /*
 3. myMap 
 Write a function  named `myMap` that accepts an array
@@ -46,7 +49,7 @@ Do not use the built in Array#map - use Array#forEach for iteration.
 */
 const myMap = (array, cb) => {
   let mapped = [];
-
+  array.map(() => {});
   array.forEach((el) => mapped.push(cb(el)));
   return mapped;
 };
