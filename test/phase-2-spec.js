@@ -50,18 +50,18 @@ describe("hiddenCounter()", function () {
 describe("myMap", function () {
   it("should function like the built in Array#map", function () {
     //Arrange
-    let input = [1,2,3,4,5];
-     let cb = (number) => {
-    //   let arr = [];
+    let input = [1, 2, 3, 4, 5];
+    let cb = (number) => {
+      //   let arr = [];
 
-    //   number.forEach((el) => arr.push(el * 2));
-    //   return arr;
+      //   number.forEach((el) => arr.push(el * 2));
+      //   return arr;
       return number * 2;
-       };
-const result = input.map((x) => x * 2);
+    };
+    const result = input.map((x) => x * 2);
     let func = myMap(input, cb);
     expect(func).to.deep.equal(result);
-   
+
     //Act
     //Assert
     //expect.fail('Remove this expect.fail and replace it with your test');
@@ -70,12 +70,12 @@ const result = input.map((x) => x * 2);
   it("should not call the built in Array#map", function () {
     //Arrange
     let arr = [1, 2, 3];
-    let spy = chai.spy.on(arr, "map")
+    let spy = chai.spy.on(arr, "map");
     //Act
     myMap(arr, () => {});
-expect(spy).to.not.have.been.called();
+    expect(spy).to.not.have.been.called();
     //Assert
-console.log(arr);
+    console.log(arr);
     //expect.fail("Remove this expect.fail and replace it with your test");
   });
 });
@@ -84,10 +84,18 @@ console.log(arr);
 describe("avgValue", function () {
   it("should return the average of an array of numbers", function () {
     //Arrange
-
+    let arr = [1, 2, 3, 4];
+    let avg = avgValue(arr);
+    const avgFunc = (array) => {
+      let sum = 0;
+      array.forEach((el) => {
+        sum += el;
+      });
+      return sum / array.length;
+    };
     //Act
-
+    expect(avg).to.equal(avgFunc(arr));
     //Assert
-    expect.fail("Remove this expect.fail and replace it with your test");
+    //expect.fail("Remove this expect.fail and replace it with your test");
   });
 });

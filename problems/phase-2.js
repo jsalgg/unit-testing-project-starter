@@ -24,7 +24,6 @@ const mirrorArray = (array) => {
   return newArray;
 };
 
-
 /*
 2.  hiddenCounter
 Write a function named `hiddenCounter()`. This function will do two things - first
@@ -37,7 +36,6 @@ function hiddenCounter() {
 }
 console.log(hiddenCounter());
 
-
 /*
 3. myMap 
 Write a function  named `myMap` that accepts an array
@@ -49,7 +47,7 @@ Do not use the built in Array#map - use Array#forEach for iteration.
 */
 const myMap = (array, cb) => {
   let mapped = [];
-  array.map(() => {});
+  //array.map(() => {});
   array.forEach((el) => mapped.push(cb(el)));
   return mapped;
 };
@@ -61,10 +59,10 @@ array of numbers and returns the average number. Assign the below function to a
 variable using the const keyword.
 */
 const avgValue = (array) => {
-  let sum = array.reduce((el, sum = 0) => (sum += el));
+  let sum = array.reduce((sum = 0, el) => (sum += el));
 
-  let avg = sum / array.length - 1;
+  let avg = sum / array.length;
   return avg;
 };
-
+//console.log(avgValue([1, 2, 3, 4]));
 module.exports = { mirrorArray, hiddenCounter, myMap, avgValue };
