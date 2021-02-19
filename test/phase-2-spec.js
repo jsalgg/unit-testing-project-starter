@@ -75,7 +75,7 @@ describe("myMap", function () {
     myMap(arr, () => {});
     expect(spy).to.not.have.been.called();
     //Assert
-    console.log(arr);
+    //console.log(arr);
     //expect.fail("Remove this expect.fail and replace it with your test");
   });
 });
